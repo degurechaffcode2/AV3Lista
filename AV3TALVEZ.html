@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var nomes = [];
+var relatorio_provas = [];
+
+for (var i = 0; i < 15; i++) {
+    var nome = prompt('Digite o nome do aluno ' + (i + 1) + ':');
+    var notas = [];
+
+    var media = 0;
+    for (var j = 0; j < 5; j++) {
+        var nota;
+        do {
+            nota = parseFloat(prompt('Digite a nota da atividade ' + (j + 1) + ' do aluno ' + nome + ':'));
+        } while (isNaN(nota) || nota < 0 || nota > 10);
+
+        notas[j] = nota;
+        media += nota;
+    }
+
+    var mediaFinal = (media / 5).toFixed(2);
+    var situacao = mediaFinal >= 8 ? 'Aprovado' : (mediaFinal >= 4 && mediaFinal <= 7.9 ? 'Exame Final' : 'Reprovado');
+    var piorNota = notas.indexOf(Math.min(...notas)) + 1;
+
+    relatorio_provas.push({
+        nome: nome,
+        media: mediaFinal,
+        situacao: situacao,
+        pior_nota: piorNota
+    });
+}
+
+document.write('Relatório de Desempenho dos Alunos:'+"<br>");
+relatorio_provas.forEach(function (aluno) {
+    document.write('Aluno: ' + aluno.nome+"<br>");
+    document.write('Média Aritmética: ' + aluno.media+"<br>");
+    document.write('Situação: ' + aluno.situacao+"<br>");
+    document.write('Atividade com Pior Nota: Prova ' + aluno.pior_nota+"<br>");
+    document.write(''+"<br>");
+});
+</script>
