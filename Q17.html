@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//2 vetores com 10 numeros
+let vetor1 = [1, 8, 3, 7, 2, 14, 25, 30, 50, 22];
+let vetor2 = [6, 4, 15, 12, 29, 21, 19, 35, 32, 13];
 
+//juntas e organiza os vetor1 vetor2 em forma crescente
+let vetor3 = vetor1.concat(vetor2);
+vetor3.sort((a, b) => a - b);
+
+//juntas e organiza os vetor1 vetor2 em forma decrescente
+let vetor4 = vetor1.concat(vetor2);
+vetor4.sort((a, b) => b - a);
+
+//resultado
+document.write("forma crescente: "+"<br/>");
+document.write(vetor3+"<br>")
+document.write("forma decrescente: "+"<br/>");
+document.write(vetor4+"<br>")
+</script>

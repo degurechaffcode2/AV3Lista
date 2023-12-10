@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//vetor com 15 posições com números inteiros
+let vetor1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+document.write("numeros iniciais:"+"<br/>")
+document.write(vetor1+"<br/>");
+//imprime o tamanho do vetor
+document.write("Tamanho do vetor: " + vetor1.length + "<br>");
+//vetor que contém todos os números primos do vetor1
+let vetor2 = [];
+for (let i = 0; i < vetor1.length; i++) {
+  if (vetor1[i] === 2) {
+    vetor2.push(vetor1[i]);
+  } else if (vetor1[i] > 2) {
+    let primo = true;
+    for (let j = 2; j < vetor1[i]; j++) {
+      if (vetor1[i] % j === 0) {
+        primo = false;
+      }
+    }
+    if (primo) {
+      vetor2.push(vetor1[i]);
+    }
+  }
+}
+document.write("numeros primos: "+"<br/>")
+document.write(vetor2);
+</script>
 

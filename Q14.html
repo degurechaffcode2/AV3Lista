@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let alunos = [];
+let notas = [];
+let aprovados = 0;
+let reprovados = 0;
 
+for (let i = 0; i < 6; i++) {
+  let nome = prompt("Digite o nome do aluno: ");
+  let nota1 = parseFloat(prompt("Digite a primeira nota: "));
+  let nota2 = parseFloat(prompt("Digite a segunda nota: "));
+  alunos.push(nome);
+  notas.push([nota1, nota2]);
+}
+
+for (let i = 0; i < alunos.length; i++) {
+  let nome = alunos[i];
+  let nota1 = notas[i][0];
+  let nota2 = notas[i][1];
+  let media = (nota1 + nota2) / 2;
+  if (media < 7) {
+    reprovados++;
+    document.write(nome + " - " + nota1 + " - " + nota2 + " - " + media + " - Reprovado <br>");
+  } else {
+    aprovados++;
+    document.write(nome + " - " + nota1 + " - " + nota2 + " - " + media + " - Aprovado <br>");
+  }
+}
+
+let percentualAprovados = (aprovados / alunos.length) * 100;
+let percentualReprovados = (reprovados / alunos.length) * 100;
+
+document.write("Percentual de alunos aprovados: " + percentualAprovados + "% <br>");
+document.write("Percentual de alunos reprovados: " + percentualReprovados + "% <br>");
+</script>
