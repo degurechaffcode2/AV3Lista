@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// Primeiro vetor com dez números inteiros
+let primeiroVetor = [4, 7, 5, 8, 2, 15, 9, 6, 10, 11];
 
+// Segundo vetor com cinco números inteiros
+let segundoVetor = [3, 4, 5, 8, 2];
+
+//soma o segundo vetor
+let somaSegundoVetor = 0;
+for (let i = 0; i < segundoVetor.length; i++) {
+  somaSegundoVetor += segundoVetor[i];
+}
+
+//armazena todos os numero impares do primero vetor em um novo vetor
+let numerosImpares = [];
+for (let i = 0; i < primeiroVetor.length; i++) {
+  if (primeiroVetor[i] % 2!= 0) {
+    numerosImpares.push(primeiroVetor[i]);
+  }
+}
+document.write("Quantidade de DIvisores do primeiro vetor com o segundo vetor"+"<br/>")
+
+// Calcula a quantidade de divisores dos números ímpares do primeiro vetor no segundo vetor
+for (let i = 0; i < numerosImpares.length; i++) {
+  let numeroImpar = numerosImpares[i];
+  let quantidadeDivisores = 0;
+  for (let j = 0; j < segundoVetor.length; j++) {
+    if (numeroImpar % segundoVetor[j] === 0) {
+      quantidadeDivisores++;
+    }
+  }
+  document.write(quantidadeDivisores+" | ");
+}
+document.write("<br/>");
+//armazena todos os numeros pares do primeiro vetor em um novo
+let pares = [];
+
+for (let i = 0; i < primeiroVetor.length; i++) {
+  if (primeiroVetor[i] % 2 == 0) {
+    pares.push(primeiroVetor[i]);
+  }
+}
+//pega cada numero do pares e soma com somasegundovetor e imprime os resultados
+document.write("Soma dos numeros pares com os numeros do segundo vetor:"+"<br/>");
+for (let i = 0; i < pares.length; i++) {
+  document.write((pares[i] + somaSegundoVetor) + " | ");
+}
+
+</script>
