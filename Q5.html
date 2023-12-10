@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//vetor de 15 posições de estudantes com matricula em logica
+let estlogica = [230011, 230012, 230013, 230014, 230015, 230016, 230017, 230018, 230019, 230020, 230021, 230022, 230023, 230024, 230025, 230026]
+//vetor de 15 posiçoes de estudantes com matricula em programação
+let estprog = [230411, 230012, 230013, 236014, 230715, 230016, 238017, 230018, 239019, 230020, 235021, 230822, 230023, 231024, 230025, 230026]
+
+//compara os 2 vetores e imprime os iguais
+document.write("Alunos cursando, simultaneamente, as disciplinas Lógica e Linguagem de Programação" + "<br>");
+for (let i = 0; i < estlogica.length; i++) {
+  if (estlogica[i] === estprog[i]) {
+    document.write(estlogica[i] + "<br>");
+  }
+}
+</script>

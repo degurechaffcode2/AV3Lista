@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>AV3 LISTA Q3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let codigos = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+let estoque = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
+while (true) {
+  let codigoCliente = parseInt(prompt("Digite o código do cliente (ou 0 para sair):"));
+  if (codigoCliente === 0) {
+    break;
+  }
+
+  let codigoProduto = parseInt(prompt("Digite o código do produto desejado:"));
+  let quantidadeDesejada = parseInt(prompt("Digite a quantidade desejada:"));
+
+  let indice = codigos.indexOf(codigoProduto);
+  if (indice !== -1) {
+    if (estoque[indice] >= quantidadeDesejada) {
+      document.write("Pedido atendido. Obrigado e volte sempre.");
+      estoque[indice] -= quantidadeDesejada;
+    } else {
+      alert("Não temos estoque suficiente dessa mercadoria.");
+    }
+  } else {
+    alert("Código inexistente.");
+  }
+}
+
+for (let i = 0; i < codigos.length; i++) {
+  document.write(codigos[i] + " - " + estoque[i] + "<br>");
+}
+</script>

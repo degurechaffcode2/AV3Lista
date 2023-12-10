@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let vendas = [];
+let comissao = [];
+let vendedores = [];
 
+// Solicita o total de vendas e a comissão de cada vendedor
+for (let i = 0; i < 10; i++) {
+  vendedores[i] = prompt("Digite o nome do vendedor " + (i + 1) + ":");
+  vendas[i] = parseInt(prompt("Digite o total de vendas do vendedor " + (i + 1) + ":"));
+  comissao[i] = parseFloat(prompt("Digite o percentual de comissão do vendedor " + (i + 1) + ":"));
+}
+
+// Total de vendas de todos os vendedores
+let totalVendas = 0;
+for (let i = 0; i < vendas.length; i++) {
+  totalVendas += vendas[i];
+}
+document.write("Total de vendas: " + totalVendas + "<br>");
+
+// Vendedor com maior valor de comissão
+let maiorComissao = 0;
+let vendedorMaiorComissao = '';
+for (let i = 0; i < comissao.length; i++) {
+  if (comissao[i] > maiorComissao) {
+    maiorComissao = comissao[i];
+    vendedorMaiorComissao = vendedores[i];
+  }
+}
+document.write("Vendedor com maior valor de comissão: " + vendedorMaiorComissao + " - " + maiorComissao + "%<br>");
+
+// Vendedor com menor valor de comissão
+let menorComissao = 100;
+let vendedorMenorComissao = '';
+for (let i = 0; i < comissao.length; i++) {
+  if (comissao[i] < menorComissao) {
+    menorComissao = comissao[i];
+    vendedorMenorComissao = vendedores[i];
+  }
+}
+document.write("Vendedor com menor valor de comissão: " + vendedorMenorComissao + " - " + menorComissao + "%<br>");
+
+//vendas vezes comissão
+for (let i = 0; i < vendedores.length; i++) {
+  let totalReceber = vendas[i] * comissao[i] / 100;
+  document.write(vendedores[i] + " recebeu R$" + totalReceber + "<br>");
+}
+</script>

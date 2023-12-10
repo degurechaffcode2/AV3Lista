@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let alunos = [];
+let mediasFinais = [];
 
+for (let i = 0; i < 7; i++) {
+  alunos[i] = prompt("Digite o nome do aluno " + (i + 1) + ":");
+  mediasFinais[i] = parseFloat(prompt("Digite a média final de " + alunos[i] + ":"));
+}
+
+let maiorMedia = 0;
+let alunoMaiorMedia = '';
+for (let i = 0; i < mediasFinais.length; i++) {
+  if (mediasFinais[i] > maiorMedia) {
+    maiorMedia = mediasFinais[i];
+    alunoMaiorMedia = alunos[i];
+  }
+}
+document.write("O aluno com maior média é: " + alunoMaiorMedia + " - Média: " + maiorMedia + "<br>");
+
+for (let i = 0; i < alunos.length; i++) {
+  if (mediasFinais[i] < 7) {
+    let notaExame = 5 - (0.4 * mediasFinais[i]);
+    document.write(alunos[i] + " precisa tirar " + notaExame.toFixed(2) + " na prova de exame final para ser aprovado<br>");
+  }
+}
+</script>
